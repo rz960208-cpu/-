@@ -11,7 +11,7 @@
 </head>
 <body>
   <div id="app">
-    <!-- 頁面 1: 劇情大綱介紹 -->
+    <!-- 頁面 1: 開場與背景故事 -->
     <div id="page-intro" class="page active">
       <div class="intro-hero">
         <div class="overlay"></div>
@@ -22,31 +22,25 @@
       </div>
       <div class="intro-body">
         <div class="card">
-          <h2>故事背景</h2>
-          <p>稻禾村是一個地理位置偏僻、對外交通不便的小村落。村落的核心是早川家族，此家族世代侍奉稻禾神，掌管神社與祭祀權力。</p>
-          <p>在這樣的宗教與血統結構下，早川家族的成員被賦予特殊意義——他們之中多數人都有遺傳性的夢遊症，而這項疾病並未被視為需要醫療介入的問題，反而被包裝成「稻禾神的召喚」與「被選中血脈」。</p>
-          <p>於是，「會夢遊」成為被肯定的特徵，而「不會夢遊」反過來成為異類、被排斥與羞辱的標記。</p>
+          <h2>歡迎來到稻禾村</h2>
+          <p>這是一個被群山包圍的孤島，也是稻禾神眷顧的土地。在這裡，夢境與現實的界線並不明顯。早川家族的人說，當你在夜裡起身行走，那不是病，那是神的召喚。</p>
+          <p>你們之中，有人被神選中，在夜裡漫步於神社的參道；有人被神遺棄，只能在清醒中嫉妒著那些夢遊的人。</p>
         </div>
         <div class="card">
-          <h2>事件概述</h2>
-          <p>近來，稻禾村發生了一連串離奇的「夢遊死亡事件」。每次屍體旁都出現整齊排列的稻穗——三縱一橫的固定圖案。</p>
-          <p>所有死者皆為夢遊症患者，表面上看來都是「夢遊時意外跌落」的意外。然而，這真的是意外嗎？</p>
-          <p>當外地調查者介入，當目擊者的證詞被質疑，當信仰與真相產生衝突，你將從不同角色的視角，親身經歷這場圍繞著信仰、權力與真相的角力。</p>
+          <h2>神隱事件</h2>
+          <p>最近，村子裡發生了連續的「神隱」事件——或者用外人的說法，「意外墜落死亡」。</p>
+          <p>昨晚，早川家的長子、下一任家主的繼承人——<strong>早川健</strong>，被發現死在神社的長階梯下。他的身邊，依然擺放著那神秘的稻穗圖案。</p>
         </div>
-        <div class="card">
-          <h2>核心主題</h2>
-          <ul class="theme-list">
-            <li><strong>信仰與真相的衝突：</strong>當真相威脅到信仰體系時，人們會如何選擇？</li>
-            <li><strong>創傷與記憶：</strong>目擊真相的孩子如何面對創傷與失憶？</li>
-            <li><strong>權力與敘事：</strong>誰有權力定義「真相」？</li>
-            <li><strong>自利式偏誤：</strong>人們如何保護自己的自尊與世界觀？</li>
-          </ul>
+        <div class="card highlight-card">
+          <h2>真相的抉擇</h2>
+          <p>是神的召喚太過沈重？還是有人在黑暗中推了一把？</p>
+          <p>今天，是早川健的葬禮，也是真相最後一次浮出水面的機會。</p>
         </div>
-        <button id="enter-story-btn" class="btn primary large">進入劇情</button>
+        <button id="enter-story-btn" class="btn primary large">進入故事</button>
       </div>
     </div>
 
-    <!-- 頁面 2: 選擇角色 -->
+    <!-- 頁面 2: 角色選擇 -->
     <div id="page-roles" class="page">
       <div class="page-header">
         <h1>選擇你的角色</h1>
@@ -57,92 +51,88 @@
       </div>
     </div>
 
-    <!-- 頁面 3: 角色劇情線 -->
-    <div id="page-story" class="page">
+    <!-- 頁面 3: 第一幕 - 葬禮上的暗流 -->
+    <div id="page-act1" class="page">
       <div class="story-container">
         <div class="story-header">
-          <div class="role-info">
-            <span class="role-tag" id="story-role-tag"></span>
-            <h2 id="story-role-name"></h2>
-          </div>
-          <div class="story-progress">
-            <span id="story-progress-text">第 1 / 5 幕</span>
-            <div class="progress-bar">
-              <div class="progress-fill" id="progress-fill"></div>
-            </div>
+          <div class="act-info">
+            <span class="act-number">第一幕</span>
+            <h1 class="act-title">葬禮上的暗流</h1>
+            <p class="act-subtitle">劇本閱讀階段</p>
           </div>
         </div>
-        <div class="story-content">
-          <div class="story-text" id="story-text"></div>
-          <div class="story-image" id="story-image"></div>
-          <div class="story-choices" id="story-choices"></div>
-          <button id="next-scene-btn" class="btn primary hidden">繼續</button>
+        <div class="script-card">
+          <div class="script-header">
+            <div class="role-info">
+              <span class="role-tag" id="script-role-tag"></span>
+              <h2 id="script-role-name"></h2>
+            </div>
+          </div>
+          <div class="script-content">
+            <div class="script-text" id="script-text"></div>
+            <div class="script-task">
+              <div class="task-icon">📋</div>
+              <div class="task-content">
+                <h3>你的任務</h3>
+                <p id="script-task-text"></p>
+              </div>
+            </div>
+          </div>
+          <div class="script-footer">
+            <button id="next-act-btn" class="btn primary">繼續</button>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- 頁面 4: 結局分析 -->
+    <!-- 頁面 4: 搜證階段 -->
+    <div id="page-investigation" class="page">
+      <div class="investigation-container">
+        <div class="act-header">
+          <span class="act-number">第二幕</span>
+          <h1 class="act-title">搜證與公聊</h1>
+          <p class="act-subtitle">線索卡設置</p>
+        </div>
+        <div class="clue-section">
+          <h2 class="section-title">第一輪搜證（公開線索）</h2>
+          <div id="public-clues" class="clue-grid"></div>
+        </div>
+        <div class="clue-section">
+          <h2 class="section-title">第二輪搜證（深入線索）</h2>
+          <div id="hidden-clues" class="clue-grid"></div>
+        </div>
+        <div class="investigation-footer">
+          <button id="to-debate-btn" class="btn primary large">進入推理階段</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 頁面 5: 推理與辯論 -->
+    <div id="page-debate" class="page">
+      <div class="debate-container">
+        <div class="act-header">
+          <span class="act-number">第三幕</span>
+          <h1 class="act-title">推理與辯論</h1>
+          <p class="act-subtitle">核心衝突</p>
+        </div>
+        <div class="debate-content">
+          <div class="debate-points" id="debate-points"></div>
+        </div>
+        <div class="debate-footer">
+          <button id="to-vote-btn" class="btn primary large">進入投票環節</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 頁面 6: 投票與結局 -->
     <div id="page-ending" class="page">
       <div class="ending-container">
-        <h1>故事結局與分析</h1>
-        
-        <div class="card">
-          <h2>故事結局</h2>
-          <p>故事的最終，青藤未被定罪，帶著自己的小說與「完結的章節」離開村落；村民們繼續堅信稻禾神的力量，把所有死亡視為「神明的安排」。</p>
-          <p>早川凜雖然心中隱約知道稻穗並非神所放置，卻選擇把這個認知埋藏在心裡，不再提起。林衡則帶著強烈無力感離開，明白在某些社會與文化環境中，真相並不自動等於正義。</p>
+        <div class="ending-header">
+          <h1>結局演繹</h1>
         </div>
-
-        <div class="card">
-          <h2>青藤的犯案手法</h2>
-          <h3>1. 遺傳性夢遊症狀的利用</h3>
-          <p>他長期觀察家族中各個夢遊者的夜間行為——包括夢遊時間、必經路徑、對環境的反應。藉由掌握這些習性，他在夜裡精準挑選時機，在夢遊者毫無防備的狀態下，引導或輕推對方走向階梯等危險地形，使其跌落身亡。表面上看來，這些死亡完全符合「夢遊意外」的形式。</p>
-          
-          <h3>2. 宗教信仰作為保護傘</h3>
-          <p>稻禾家族與村民普遍相信「夢遊」等於「神召喚」，因此對於任何在夢遊狀態下發生的死亡事件，都傾向以「神意」解釋，而非懷疑有人為介入。青藤非常清楚這點，並刻意讓死亡場景看起來更接近「神話敘事」。</p>
-          
-          <h3>3. 簽名行為（Signature Behavior）</h3>
-          <p>每次犯案後，青藤都會在死者旁以稻穗排出固定的圖案：<strong>三縱一橫</strong>。</p>
-          <ul>
-            <li><strong>對村民而言：</strong>此圖案被視為「稻禾神留下的印記」，引發更強烈的宗教恐懼與崇敬。</li>
-            <li><strong>對調查者而言：</strong>這是一種典型的「簽名行為」，代表加害者在犯罪現場刻意留下具有象徵性的痕跡。</li>
-            <li><strong>對青藤而言：</strong>這是他身為小說家的「落款」，每一次死亡都是一章結束。</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h2>兒童證詞、創傷與失憶</h2>
-          <p>早川凜是唯一目擊「真兇清醒帶走夢遊者」的角色。然而，因為年紀幼小與心理承受力有限，他在見到青藤拖著親人走向神社後，產生強烈恐懼與無助感。這種創傷經驗導致：</p>
-          <ul>
-            <li><strong>創傷相關失憶：</strong>他對事件關鍵片段的回憶變得破碎、不連貫，甚至主動避免回想。</li>
-            <li><strong>壓抑機制啟動：</strong>為了保護自己不再反覆經歷恐懼，他的心理選擇壓抑這段記憶，轉而說出「我不記得」、「我不知道」來逃避回想。</li>
-            <li><strong>證詞不被信任：</strong>在大人眼中，他說的話前後矛盾、情緒化又難以具體說明，於是被歸類為「孩子的胡思亂想」或「夢與現實混淆」。最終，他的證詞無法被視為可靠證據。</li>
-          </ul>
-          <p class="highlight">此處呈現出一個殘酷的現實：真正看到真相的人，反而最容易因創傷與身份（孩子）而被忽視。</p>
-        </div>
-
-        <div class="card">
-          <h2>信仰、權力與真相的角力</h2>
-          <p>本故事中，信仰並非單純的宗教安慰，而是一種強大的敘事力量：</p>
-          <p>對村長與多數族人而言，「夢遊」必須是神選之證、「死亡」必須是神的召喚，因為這樣才能維持家族與自身的意義感。</p>
-          <p>一旦承認存在人為加害者，就意味著：</p>
-          <ul>
-            <li>多年來對信仰的詮釋是錯誤的</li>
-            <li>家族內部存在背叛與暴力</li>
-            <li>「被神選中的血統」其實只是遺傳病與迷信的包裝</li>
-          </ul>
-          <p>因此，他們選擇維持宗教敘事，即便這意味著放走真正的加害者。在這個結構下，真相成為最不受歡迎的東西，外地調查者與受創孩子因此同時被邊緣化。</p>
-        </div>
-
-        <div class="card">
-          <h2>反思：人們寧願相信什麼</h2>
-          <p>我們想要在這個故事中呈現的，不只是一起利用夢遊症與信仰進行的犯罪，更是一個關於「人們寧願相信什麼」的事實。</p>
-          <p>在社會學中有一種理論，人會相信自己所看到的事務，也會將自己所知覺到的做出歸因。而即使是有真正的證據去告訴一個人這是一個錯誤的知覺，人們也會因為保護自尊而做出自利式偏誤，就如同故事中的早川家家主一樣。</p>
-          <p class="quote">「但如果我們承認那是病，那我們的血統還剩下什麼？」</p>
-          <p>他強調，如果承認了科學的事實，那他們的真實性就會相對的被抹滅，這種自毀自尊的方式並不會被他們所接受。人類會做出自尊保存的行為，無論在任何一種文化下，而這一切都是為了自尊。</p>
-        </div>
-
-        <div class="ending-actions">
-          <button id="restart-btn" class="btn primary">重新開始</button>
+        <div class="ending-content" id="ending-content"></div>
+        <div class="ending-footer">
+          <button id="restart-btn" class="btn primary large">重新開始</button>
         </div>
       </div>
     </div>
