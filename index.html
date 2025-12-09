@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>稻禾村：眠行疑案</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Noto+Sans+TC:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <header class="hero">
+      <div class="overlay"></div>
+      <div class="hero-content">
+        <p class="eyebrow">劇本殺 · 稻禾神的沉默</p>
+        <h1>稻禾村：眠行疑案</h1>
+        <p class="lede">自由選角 · 選擇線索 · 觸發真相</p>
+        <div class="cta-row">
+          <button id="start-btn" class="btn primary">開始遊戲</button>
+          <button id="about-btn" class="btn ghost">了解世界觀</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <section id="intro" class="card intro hidden">
+        <h2>世界觀</h2>
+        <p>偏僻的稻禾村由早川家族守護神社。夢遊被視為「神選血脈」，不會夢遊的人反成異類。近來的連續「夢遊死亡」讓村民噤聲，真相被信仰與恐懼遮蔽。</p>
+        <ul class="bullet">
+          <li><strong>稻禾神信仰：</strong>夢遊被解釋為神的召喚。</li>
+          <li><strong>血脈壓迫：</strong>不夢遊者遭排斥與羞辱。</li>
+          <li><strong>死亡模式：</strong>屍旁總有三縱一橫的稻穗排列。</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>選擇角色</h2>
+        <div id="role-grid" class="role-grid"></div>
+      </section>
+
+      <section id="scene" class="card hidden">
+        <div class="scene-header">
+          <div>
+            <p class="eyebrow" id="scene-role"></p>
+            <h3 id="scene-title"></h3>
+          </div>
+          <div class="tag" id="scene-tag">行動選擇</div>
+        </div>
+        <p id="scene-desc" class="scene-desc"></p>
+        <div class="choices" id="choice-list"></div>
+      </section>
+
+      <section id="gallery" class="card hidden">
+        <h2>場景圖片</h2>
+        <div class="gallery-grid" id="gallery-grid"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
