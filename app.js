@@ -133,6 +133,7 @@ const galleryGrid = document.getElementById("gallery-grid");
 const intro = document.getElementById("intro");
 const startBtn = document.getElementById("start-btn");
 const aboutBtn = document.getElementById("about-btn");
+const playBtn = document.getElementById("play-btn");
 
 startBtn.addEventListener("click", () => {
   intro.classList.add("hidden");
@@ -144,6 +145,11 @@ aboutBtn.addEventListener("click", () => {
   if (!intro.classList.contains("hidden")) {
     intro.scrollIntoView({ behavior: "smooth" });
   }
+});
+
+playBtn.addEventListener("click", () => {
+  intro.classList.add("hidden");
+  document.getElementById("role-grid").scrollIntoView({ behavior: "smooth" });
 });
 
 function renderRoles() {
