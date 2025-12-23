@@ -23,7 +23,7 @@ const roles = {
     fullName: '青藤｜被排斥的旁系',
     tag: '嫌疑人',
     description: '不會夢遊的遠房親戚，怨恨與貪婪在心中發酵，懂得利用家族的「神選」迷思。',
-    thumb: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=400&q=80',
+    thumb: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=600&q=80',
     script: {
       text: `你心裡覺得好笑。早川健死了，死得和你預期的一樣——像個笨拙的傀儡滾下樓梯。你站在靈堂角落，看著這些人哭天搶地，讚頌他是「回到了神的懷抱」。你昨晚確實去過神社。你知道健有夢遊的習慣，每天凌晨兩點，他會像上了發條的鐘一樣走向鳥居。你只是稍微「調整」了一下路邊的石頭，或者說，你只是站在那裡，看著他走過去。你沒有動手推他，是「神」帶走了他。你在屍體旁擺下了三根直的稻穗，一根橫的。那是你小說裡的「章節結束」符號。但在這群愚昧的村民眼裡，那成了神聖的印記。`,
       task: '嘲諷調查官的無能，引導大家相信這是神的旨意，隱藏你放置稻穗的真實含義（簽名行為）。'
@@ -35,7 +35,7 @@ const roles = {
     fullName: '早川凜｜被壓抑的目擊者',
     tag: '目擊',
     description: '夢裡的神社、真實的拖行聲交疊。他的證詞零碎，被大人視為幻覺。',
-    thumb: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=400&q=80',
+    thumb: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=600&q=80',
     script: {
       text: `你很害怕。哥哥死了，就像之前的叔叔一樣。大人們說哥哥去侍奉神明了，但你記得昨晚看見的東西。你昨晚也夢遊了，或者你是醒著的？你分不清楚。你躲在樹叢後面，看見哥哥搖搖晃晃地走著。而在哥哥身後，有一個黑影。那個黑影沒有夢遊，他走得很穩，手裡拿著稻穗。那個人好像是……青藤表哥？不，不能說。上次你說看見青藤表哥在現場，村長爺爺打了你一巴掌，說你在褻瀆神明，說青藤是被神遺棄的人，不可能靠近神選的儀式。你的腦袋好痛，那段記憶變成了碎片。`,
       task: '試圖表達你的恐懼，但因為害怕被罵而語無倫次。你懷疑青藤，但不敢確定。'
@@ -47,7 +47,7 @@ const roles = {
     fullName: '林衡｜外地調查者',
     tag: '調查',
     description: '注意到三縱一橫稻穗與夢遊患者皆遇難，懷疑有人利用症狀偽裝意外。',
-    thumb: 'https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=400&q=80',
+    thumb: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=600&q=80',
     script: {
       text: `這已經是第三起了。三名死者，全都是夢遊症患者，全都是摔死，身邊有奇怪的稻穗圖案（三縱一橫）。這絕對不是巧合，這是連環殺人案。你的直覺告訴你，那個叫青藤的小說家有問題。他看人的眼神充滿輕蔑，而且他是唯一沒有夢遊症、在夜間行動自如的人。但是你沒有證據。這裡沒有監視器，屍檢報告被村長壓了下來，村民們甚至拒絕配合調查。他們把你當作「不懂信仰的外人」。今天是你最後的機會，你必須打破村長的迷信防線。`,
       task: '找出青藤犯案的時間線漏洞，說服村長這是一場謀殺。'
@@ -59,7 +59,7 @@ const roles = {
     fullName: '村長｜信仰與否認',
     tag: '信仰',
     description: '身兼家主與宗教權威，堅信夢遊是神諭，對人為說法本能排拒。',
-    thumb: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=400&q=80',
+    thumb: 'https://images.unsplash.com/photo-1504595403659-9088ce801e29?auto=format&fit=crop&w=600&q=80',
     script: {
       text: `健死了，你的繼承人沒了。雖然心痛，但你是村長，你不能展現軟弱。那個外來的調查官一直在散布謠言，說什麼「連環謀殺」。荒謬！早川家的血脈是神聖的，夢遊是神與我們的連結。如果承認有人能利用這個連結殺人，那豈不是說我們的信仰毫無保護力？更何況，懷疑青藤？那個廢物？他連被神看一眼的資格都沒有，怎麼可能介入神聖的夢遊儀式？凜那孩子最近總是胡言亂語，一定是嚇壞了，必須讓他閉嘴，不能讓外人看笑話。`,
       task: '維護家族榮譽，駁斥林衡的「謀殺論」，將凜的異常行為解釋為「靈力失控」。'
@@ -139,6 +139,8 @@ const fillDemoBtn = document.getElementById('fill-demo-btn');
 const startSessionBtn = document.getElementById('start-session-btn');
 const playerList = document.getElementById('player-list');
 const enterStoryBtn = document.getElementById('enter-story-btn');
+const isLocalPlayerCheckbox = document.getElementById('is-local-player');
+const roomIdInput = document.getElementById('room-id-input');
 const roleGrid = document.getElementById('role-grid');
 const viewerRoleSelect = document.getElementById('viewer-role-select');
 const toPublicBtn = document.getElementById('to-public-btn');
@@ -152,6 +154,14 @@ const sendChatBtn = document.getElementById('send-chat-btn');
 const chatInput = document.getElementById('chat-input');
 const chatMessages = document.getElementById('chat-messages');
 const voiceBtn = document.getElementById('voice-btn');
+const openChatBtn = document.getElementById('open-chat-btn');
+const chatWrapper = document.getElementById('chat-wrapper');
+let ws = null;
+let localPlayer = { name: '', roleId: null };
+const WS_URL = (() => {
+  const proto = location.protocol === 'https:' ? 'wss:' : 'ws:';
+  return `${proto}//${location.host}/ws`;
+})();
 
 // 初始化頁面
 showPage('lobby');
@@ -190,6 +200,14 @@ chatInput.addEventListener('keydown', (e) => {
 });
 
 voiceBtn.addEventListener('click', toggleVoiceInput);
+openChatBtn.addEventListener('click', toggleChat);
+
+document.addEventListener('keydown', (e) => {
+  if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'm') {
+    e.preventDefault();
+    toggleChat();
+  }
+});
 
 // ----- 玩家配對 -----
 function handleAddPlayer() {
@@ -204,6 +222,10 @@ function handleAddPlayer() {
     return;
   }
   session.players.push({ name, roleId });
+  if (isLocalPlayerCheckbox?.checked) {
+    localPlayer = { name, roleId };
+    isLocalPlayerCheckbox.checked = false;
+  }
   playerNameInput.value = '';
   renderPlayerList();
   updateStartButton();
@@ -216,6 +238,9 @@ function handleFillDemo() {
     { name: '玩家C', roleId: 'lin' },
     { name: '玩家D', roleId: 'chief' }
   ];
+  if (!localPlayer.roleId) {
+    localPlayer = { name: '玩家A', roleId: 'qingteng' };
+  }
   renderPlayerList();
   updateStartButton();
 }
@@ -238,11 +263,16 @@ function handleStartSession() {
     alert('需 4 名玩家且角色唯一');
     return;
   }
+  if (!localPlayer.roleId) {
+    alert('請勾選一名玩家為「本機玩家」以鎖定劇本隱私');
+    return;
+  }
   session.stage = 'intro';
-  session.currentRoleId = session.players[0].roleId;
+  session.currentRoleId = localPlayer.roleId;
   appendChat('system', '系統', '配對完成，準備進入劇情。');
   renderRoles();
   renderViewerSelect();
+  connectWebSocket();
   showPage('intro');
 }
 
@@ -252,14 +282,15 @@ function renderRoles() {
   roleGrid.innerHTML = Object.values(roles).map(role => {
     const player = session.players.find(p => p.roleId === role.id);
     const playerName = player ? player.name : '未分配';
+    const locked = role.id !== localPlayer.roleId;
     return `
-      <div class="role-card" data-role="${role.id}">
+      <div class="role-card ${locked ? 'locked' : ''}" data-role="${role.id}">
         <img class="role-thumb" src="${role.thumb}" alt="${role.name}">
         <div class="role-meta">
           <div class="tag">${role.tag}</div>
           <h3>${role.fullName}</h3>
           <p>${role.description}</p>
-          <p class="muted-note">玩家：${playerName}</p>
+          <p class="muted-note">玩家：${playerName}${locked ? '（無法查看他人劇本）' : ''}</p>
         </div>
       </div>
     `;
@@ -268,6 +299,10 @@ function renderRoles() {
   roleGrid.querySelectorAll('.role-card').forEach(card => {
     card.addEventListener('click', () => {
       const roleId = card.getAttribute('data-role');
+      if (roleId !== localPlayer.roleId) {
+        alert('隱私限制：只能查看自己的劇本與線索');
+        return;
+      }
       switchRole(roleId);
       goStage('script');
     });
@@ -276,13 +311,20 @@ function renderRoles() {
 
 function renderViewerSelect() {
   if (!viewerRoleSelect) return;
-  viewerRoleSelect.innerHTML = session.players.map(p => {
-    const role = roles[p.roleId];
-    return `<option value="${role.id}" ${session.currentRoleId === role.id ? 'selected' : ''}>${role.name}（${p.name}）</option>`;
-  }).join('');
+  if (!localPlayer.roleId) {
+    viewerRoleSelect.innerHTML = '<option>未選擇本機角色</option>';
+    return;
+  }
+  const role = roles[localPlayer.roleId];
+  const player = session.players.find(p => p.roleId === localPlayer.roleId);
+  viewerRoleSelect.innerHTML = `<option value="${role.id}">${role.name}（${player?.name || '本機'}）</option>`;
 }
 
 function switchRole(roleId) {
+  if (roleId !== localPlayer.roleId) {
+    alert('隱私限制：只能查看自己的劇本與線索');
+    return;
+  }
   session.currentRoleId = roleId;
   renderViewerSelect();
   if (session.stage === 'script') renderScript();
@@ -313,7 +355,7 @@ function renderClues() {
   `).join('');
 
   if (session.stage === 'private') {
-    const privates = clues.privateByRole[session.currentRoleId] || [];
+    const privates = clues.privateByRole[localPlayer.roleId] || [];
     hiddenClues.innerHTML = privates.map(clue => `
       <div class="clue-card">
         <div class="clue-title">${clue.title}</div>
@@ -343,7 +385,7 @@ function renderVoteForm() {
   const voteResults = document.getElementById('vote-results');
   if (!voteForm || !voteResults) return;
   voteForm.innerHTML = `
-    <label class="muted-note">目前視角：${roles[session.currentRoleId].name}</label>
+    <label class="muted-note">目前視角：${roles[localPlayer.roleId].name}</label>
     ${Object.values(roles).map(r => `
       <div class="vote-option">
         <input type="radio" name="vote-target" value="${r.id}" id="vote-${r.id}">
@@ -360,11 +402,11 @@ function submitVote() {
     alert('請選擇一個兇手候選');
     return;
   }
-  session.votes[session.currentRoleId] = target.value;
+  session.votes[localPlayer.roleId] = target.value;
   const summary = tallyVotes();
   const voteResults = document.getElementById('vote-results');
   voteResults.textContent = `投票完成：${Object.keys(summary).map(k => `${roles[k].name} ${summary[k]} 票`).join(' / ')}`;
-  appendChat('system', '系統', `${roles[session.currentRoleId].name} 已投票。`);
+  appendChat('system', '系統', `${roles[localPlayer.roleId].name} 已投票。`);
 }
 
 function tallyVotes() {
@@ -432,6 +474,11 @@ function resetAll() {
   session.currentRoleId = null;
   session.stage = 'lobby';
   session.votes = {};
+  localPlayer = { name: '', roleId: null };
+  if (ws) {
+    ws.close();
+    ws = null;
+  }
   renderPlayerList();
   updateStartButton();
   playerNameInput.value = '';
@@ -453,14 +500,25 @@ function appendChat(type, sender, text) {
 function sendChatMessage() {
   const text = chatInput.value.trim();
   if (!text) return;
-  const sender = roles[session.currentRoleId]?.name || '旁觀者';
+  const sender = roles[localPlayer.roleId]?.name || '旁觀者';
   appendChat('user', sender, text);
+  sendWS({ type: 'chat', text, sender });
   chatInput.value = '';
 }
 
 function updateChatStatus(status) {
   const el = document.getElementById('chat-status');
   if (el) el.textContent = status;
+}
+
+function toggleChat() {
+  if (!chatWrapper) return;
+  const willShow = chatWrapper.classList.contains('chat-hidden');
+  chatWrapper.classList.toggle('chat-hidden');
+  document.body.classList.toggle('chat-open', willShow);
+  if (willShow) {
+    chatInput?.focus();
+  }
 }
 
 // 簡易語音輸入（瀏覽器支援才可用）
@@ -492,4 +550,50 @@ function toggleVoiceInput() {
   recognition.start();
   session.voiceActive = true;
   voiceBtn.textContent = '錄音中...';
+}
+
+// ----- WebSocket 連線 -----
+function connectWebSocket() {
+  const roomId = roomIdInput?.value?.trim() || 'demo-room';
+  if (!roomId || !localPlayer.roleId) return;
+  try {
+    ws = new WebSocket(WS_URL + `?room=${encodeURIComponent(roomId)}`);
+  } catch (err) {
+    console.warn('WS 連線失敗', err);
+    return;
+  }
+  ws.onopen = () => {
+    updateChatStatus(`已連線：${roomId}`);
+    sendWS({ type: 'join', roomId, name: localPlayer.name, roleId: localPlayer.roleId });
+  };
+  ws.onmessage = (event) => {
+    try {
+      const msg = JSON.parse(event.data);
+      handleWSMessage(msg);
+    } catch (err) {
+      console.warn('WS 訊息解析失敗', err);
+    }
+  };
+  ws.onclose = () => updateChatStatus('已斷線（本地不影響模擬）');
+}
+
+function sendWS(payload) {
+  if (ws && ws.readyState === WebSocket.OPEN) {
+    ws.send(JSON.stringify(payload));
+  }
+}
+
+function handleWSMessage(msg) {
+  if (msg.type === 'chat') {
+    appendChat('user', msg.sender || '玩家', msg.text || '');
+  } else if (msg.type === 'system') {
+    appendChat('system', '系統', msg.text || '');
+  } else if (msg.type === 'vote') {
+    session.votes[msg.roleId] = msg.target;
+    const summary = tallyVotes();
+    const voteResults = document.getElementById('vote-results');
+    if (voteResults) {
+      voteResults.textContent = `統計：${Object.keys(summary).map(k => `${roles[k].name} ${summary[k]} 票`).join(' / ')}`;
+    }
+  }
 }

@@ -104,6 +104,42 @@ p {
   padding: 40px 20px 80px;
 }
 
+.lobby-hero {
+  position: relative;
+  height: 32vh;
+  min-height: 240px;
+  background: url("https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+  border-radius: 18px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.lobby-hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(7, 9, 13, 0.75), rgba(7, 9, 13, 0.9));
+}
+
+.lobby-hero .hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #fff;
+}
+
+.lobby-hero .hero-content h1 {
+  margin: 0 0 10px;
+  font-size: 36px;
+}
+
+.lobby-hero .hero-content .subtitle {
+  color: var(--accent-2);
+  margin: 0;
+}
+
 .lobby-container {
   max-width: 1100px;
   margin: 0 auto;
@@ -143,6 +179,22 @@ p {
   border: 1px solid var(--border);
   background: rgba(255, 255, 255, 0.02);
   color: var(--text);
+}
+
+.lobby-form-row {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 10px;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.inline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 14px;
 }
 
 .player-list {
@@ -715,6 +767,34 @@ p {
   z-index: 50;
 }
 
+.chat-hidden {
+  display: none;
+}
+
+.chat-toggle-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 60;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  border: 1px solid var(--border);
+  background: linear-gradient(120deg, var(--accent), #e58b48);
+  color: #0c0f14;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.35);
+}
+
+.chat-toggle-btn:hover {
+  transform: translateY(-2px);
+}
+
+.chat-open #app {
+  margin-right: 360px;
+}
+
 .chat-header {
   padding: 14px 16px;
   border-bottom: 1px solid var(--border);
@@ -798,8 +878,11 @@ p {
     right: 12px;
     left: 12px;
     width: auto;
-    height: 40vh;
+    height: 45vh;
     bottom: 12px;
     top: auto;
+  }
+  .chat-open #app {
+    margin-right: 0;
   }
 }

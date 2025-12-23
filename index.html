@@ -13,10 +13,17 @@
   <div id="app">
     <!-- 頁面 0: 玩家配對大廳 -->
     <div id="page-lobby" class="page active">
-      <div class="lobby-container">
-        <div class="lobby-header">
+      <div class="lobby-hero">
+        <div class="overlay"></div>
+        <div class="hero-content">
           <h1>線上配對｜稻禾村：眠行疑案</h1>
-          <p class="page-subtitle">在進入劇情前，先配對 4 位玩家並分配角色</p>
+          <p class="subtitle">在進入劇情前，先配對 4 位玩家並分配角色</p>
+        </div>
+      </div>
+      <div class="lobby-container">
+        <div class="page-header">
+          <h1>配對大廳</h1>
+          <p class="page-subtitle">填入玩家暱稱並選定 4 個不同角色，開始劇情線</p>
         </div>
         <div class="lobby-content">
           <div class="lobby-card">
@@ -30,6 +37,13 @@
                 <option value="chief">村長</option>
               </select>
               <button id="add-player-btn" class="btn primary">加入配對</button>
+            </div>
+            <div class="lobby-form-row">
+              <label class="inline">
+                <input id="is-local-player" type="checkbox">
+                這台裝置就是此玩家（鎖定劇本隱私）
+              </label>
+              <input id="room-id-input" type="text" placeholder="房間代碼（預設 demo-room）">
             </div>
             <p class="lobby-hint">每個角色只能有 1 名玩家，需滿 4 人才能開始</p>
           </div>
@@ -204,8 +218,10 @@
     </div>
   </div>
 
+  <button id="open-chat-btn" class="chat-toggle-btn" title="開啟討論區 (Ctrl+M)">💬 討論區</button>
+
   <!-- 右側即時討論區 -->
-  <div id="chat-wrapper" class="chat-wrapper">
+  <div id="chat-wrapper" class="chat-wrapper chat-hidden">
     <div class="chat-header">
       <div>
         <div class="chat-title">即時討論區</div>
