@@ -11,6 +11,39 @@
 </head>
 <body>
   <div id="app">
+    <!-- 頁面 0: 玩家配對大廳 -->
+    <div id="page-lobby" class="page active">
+      <div class="lobby-container">
+        <div class="lobby-header">
+          <h1>線上配對｜稻禾村：眠行疑案</h1>
+          <p class="page-subtitle">在進入劇情前，先配對 4 位玩家並分配角色</p>
+        </div>
+        <div class="lobby-content">
+          <div class="lobby-card">
+            <h2>加入玩家</h2>
+            <div class="lobby-form">
+              <input id="player-name-input" type="text" placeholder="玩家暱稱（必填）">
+              <select id="player-role-select">
+                <option value="qingteng">青藤</option>
+                <option value="rin">早川凜</option>
+                <option value="lin">林衡</option>
+                <option value="chief">村長</option>
+              </select>
+              <button id="add-player-btn" class="btn primary">加入配對</button>
+            </div>
+            <p class="lobby-hint">每個角色只能有 1 名玩家，需滿 4 人才能開始</p>
+          </div>
+          <div class="lobby-card">
+            <h2>配對名單</h2>
+            <ul id="player-list" class="player-list"></ul>
+            <div class="lobby-actions">
+              <button id="fill-demo-btn" class="btn">填入示例玩家</button>
+              <button id="start-session-btn" class="btn primary large" disabled>開始劇情線</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- 頁面 1: 開場與背景故事 -->
     <div id="page-intro" class="page active">
       <div class="intro-hero">
@@ -40,46 +73,59 @@
       </div>
     </div>
 
-    <!-- 頁面 2: 角色選擇 -->
+    <!-- 頁面 2: 角色概覽（已配對） -->
     <div id="page-roles" class="page">
-      <div class="page-header">
-        <h1>選擇你的角色</h1>
-        <p class="page-subtitle">每個角色都有不同的視角與立場，選擇一個角色開始你的故事</p>
-      </div>
-      <div class="role-selection">
-        <div id="role-grid" class="role-grid"></div>
+      <div class="layout">
+        <div class="main-column">
+          <div class="page-header">
+            <h1>角色分配完成</h1>
+            <p class="page-subtitle">點擊角色查看其私有劇本，再依序進入公開線索 → 私有線索 → 投票</p>
+          </div>
+          <div class="role-selection">
+            <div id="role-grid" class="role-grid"></div>
+          </div>
+        </div>
       </div>
     </div>
 
     <!-- 頁面 3: 第一幕 - 葬禮上的暗流 -->
     <div id="page-act1" class="page">
-      <div class="story-container">
-        <div class="story-header">
-          <div class="act-info">
-            <span class="act-number">第一幕</span>
-            <h1 class="act-title">葬禮上的暗流</h1>
-            <p class="act-subtitle">劇本閱讀階段</p>
-          </div>
-        </div>
-        <div class="script-card">
-          <div class="script-header">
-            <div class="role-info">
-              <span class="role-tag" id="script-role-tag"></span>
-              <h2 id="script-role-name"></h2>
-            </div>
-          </div>
-          <div class="script-content">
-            <div class="script-text" id="script-text"></div>
-            <div class="script-task">
-              <div class="task-icon">📋</div>
-              <div class="task-content">
-                <h3>你的任務</h3>
-                <p id="script-task-text"></p>
+      <div class="layout">
+        <div class="main-column">
+          <div class="story-container">
+            <div class="story-header">
+              <div class="act-info">
+                <span class="act-number">第一幕</span>
+                <h1 class="act-title">葬禮上的暗流</h1>
+                <p class="act-subtitle">私人劇本閱讀（依玩家角色）</p>
+              </div>
+              <div class="role-switch">
+                <label for="viewer-role-select">切換視角：</label>
+                <select id="viewer-role-select"></select>
               </div>
             </div>
-          </div>
-          <div class="script-footer">
-            <button id="next-act-btn" class="btn primary">繼續</button>
+            <div class="script-card">
+              <div class="script-header">
+                <div class="role-info">
+                  <span class="role-tag" id="script-role-tag"></span>
+                  <h2 id="script-role-name"></h2>
+                  <div class="role-player" id="script-player-name"></div>
+                </div>
+              </div>
+              <div class="script-content">
+                <div class="script-text" id="script-text"></div>
+                <div class="script-task">
+                  <div class="task-icon">📋</div>
+                  <div class="task-content">
+                    <h3>你的任務</h3>
+                    <p id="script-task-text"></p>
+                  </div>
+                </div>
+              </div>
+              <div class="script-footer">
+                <button id="to-public-btn" class="btn primary">進入公開線索</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -87,53 +133,92 @@
 
     <!-- 頁面 4: 搜證階段 -->
     <div id="page-investigation" class="page">
-      <div class="investigation-container">
-        <div class="act-header">
-          <span class="act-number">第二幕</span>
-          <h1 class="act-title">搜證與公聊</h1>
-          <p class="act-subtitle">線索卡設置</p>
-        </div>
-        <div class="clue-section">
-          <h2 class="section-title">第一輪搜證（公開線索）</h2>
-          <div id="public-clues" class="clue-grid"></div>
-        </div>
-        <div class="clue-section">
-          <h2 class="section-title">第二輪搜證（深入線索）</h2>
-          <div id="hidden-clues" class="clue-grid"></div>
-        </div>
-        <div class="investigation-footer">
-          <button id="to-debate-btn" class="btn primary large">進入推理階段</button>
+      <div class="layout">
+        <div class="main-column">
+          <div class="investigation-container">
+            <div class="act-header">
+              <span class="act-number">第二幕</span>
+              <h1 class="act-title">搜證與公聊</h1>
+              <p class="act-subtitle">線索卡設置（先公開，再個別）</p>
+            </div>
+            <div class="clue-section">
+              <h2 class="section-title">第一輪搜證（公開線索）</h2>
+              <div id="public-clues" class="clue-grid"></div>
+            </div>
+            <div class="clue-section">
+              <h2 class="section-title">第二輪搜證（個別線索）</h2>
+              <div id="hidden-clues" class="clue-grid"></div>
+              <p class="muted-note">僅顯示目前視角角色可見的線索</p>
+            </div>
+            <div class="investigation-footer">
+              <button id="to-private-btn" class="btn primary">顯示個別線索</button>
+              <button id="to-debate-btn" class="btn primary large">進入投票階段</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- 頁面 5: 推理與辯論 -->
     <div id="page-debate" class="page">
-      <div class="debate-container">
-        <div class="act-header">
-          <span class="act-number">第三幕</span>
-          <h1 class="act-title">推理與辯論</h1>
-          <p class="act-subtitle">核心衝突</p>
-        </div>
-        <div class="debate-content">
-          <div class="debate-points" id="debate-points"></div>
-        </div>
-        <div class="debate-footer">
-          <button id="to-vote-btn" class="btn primary large">進入投票環節</button>
+      <div class="layout">
+        <div class="main-column">
+          <div class="debate-container">
+            <div class="act-header">
+              <span class="act-number">第三幕</span>
+              <h1 class="act-title">推理與辯論</h1>
+              <p class="act-subtitle">核心衝突與線上投票</p>
+            </div>
+            <div class="debate-content">
+              <div class="debate-points" id="debate-points"></div>
+            </div>
+            <div class="vote-section" id="vote-section">
+              <h2>第四部分：兇手指認</h2>
+              <p class="muted-note">每個角色需投出心中的兇手，提交後可查看統計</p>
+              <div id="vote-form"></div>
+              <div class="vote-results" id="vote-results"></div>
+              <button id="submit-vote-btn" class="btn primary">提交投票</button>
+              <button id="host-talk-btn" class="btn">主持人發言（機器人）</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- 頁面 6: 投票與結局 -->
     <div id="page-ending" class="page">
-      <div class="ending-container">
-        <div class="ending-header">
-          <h1>結局演繹</h1>
+      <div class="layout">
+        <div class="main-column">
+          <div class="ending-container">
+            <div class="ending-header">
+              <h1>第五部分：結局揭示</h1>
+            </div>
+            <div class="ending-content" id="ending-content"></div>
+            <div class="ending-footer">
+              <button id="reveal-truth-btn" class="btn primary">公布真相</button>
+              <button id="restart-btn" class="btn primary large">重新開始</button>
+            </div>
+          </div>
         </div>
-        <div class="ending-content" id="ending-content"></div>
-        <div class="ending-footer">
-          <button id="restart-btn" class="btn primary large">重新開始</button>
-        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 右側即時討論區 -->
+  <div id="chat-wrapper" class="chat-wrapper">
+    <div class="chat-header">
+      <div>
+        <div class="chat-title">即時討論區</div>
+        <div class="chat-subtitle">文字 + 語音輸入</div>
+      </div>
+      <div class="chat-status" id="chat-status">未連線（本地模擬）</div>
+    </div>
+    <div id="chat-messages" class="chat-messages"></div>
+    <div class="chat-input">
+      <textarea id="chat-input" rows="2" placeholder="輸入訊息，按 Enter 送出"></textarea>
+      <div class="chat-actions">
+        <button id="voice-btn" class="btn">🎤 語音</button>
+        <button id="send-chat-btn" class="btn primary">送出</button>
       </div>
     </div>
   </div>
